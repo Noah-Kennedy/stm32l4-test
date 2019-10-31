@@ -12,9 +12,9 @@ use cortex_m_semihosting::hprintln;
 
 #[entry]
 fn main() -> ! {
-    hprintln!("Hello, world!").unwrap();
-
+    let mut count: u32 = 0;
     loop {
-        cortex_m::asm::nop()
+        hprintln!("Count: {}", count).unwrap();
+        count += 1;
     }
 }
